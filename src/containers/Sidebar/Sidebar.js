@@ -13,30 +13,32 @@ const Sidebar = ({ posts, onSavePosts }) => {
     const [lastItem, setLastItem] = useState('')
     const [hasMore, setHasMore] = useState(true)
     const [currentPage, setCurrentPage] = useState(1)
-    
 
     const fetchPosts = () => {
-    axios
-        .get(
-            `https://www.reddit.com/r/mac/top.json?limit=${POSTS_LIMIT}&after=${lastItem}`
+        axios
+            .get(
+                `https://www.reddit.com/r/mac/top.json?limit=${POSTS_LIMIT}&after=${lastItem}`
             )
-        .then(res => {
-            const data = res.data.data.children
-            setLastItem(data[data.length - 1].data.name)
-            onSavePosts(res.data.data.children)
-            setCurrentPage(currentPage => currentPage + 1)
-            setHasMore(currentPage < PAGES_LIMIT)
-        })
-        .catch(e => {
-            console.log('error:', e)
-        });
+            .then(res => {
+                const data = res.data.data.children
+                setLastItem(data[data.length - 1].data.name)
+                onSavePosts(res.data.data.children)
+                setCurrentPage(currentPage => currentPage + 1)
+                setHasMore(currentPage < PAGES_LIMIT)
+            })
+            .catch(e => {
+                console.log('error:', e)
+            });
     }
 
     useEffect(() => {
         fetchPosts()
     }, []);
     return (
-        <List items={posts} canLoadMore={hasMore} onLoadMore={fetchPosts} />
+        <List
+            items={posts}
+            canLoadMore={hasMore}
+            onLoadMore={fetchPosts} />
     )
 }
 
