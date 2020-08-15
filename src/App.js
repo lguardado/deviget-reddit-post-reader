@@ -1,23 +1,15 @@
 import React from 'react';
 import './App.css';
+import Layout from './hoc/Layout/Layout';
+import Sidebar from './containers/Sidebar/Sidebar'
+import Details from './containers/Details/Details'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+        <Sidebar />
+        <Details />
+    </Layout>
   );
 }
 
