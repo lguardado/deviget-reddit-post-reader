@@ -6,15 +6,12 @@ import List from '../../components/List/List'
 import { savePosts } from '../../store/actions'
 
 const Sidebar = ({ posts, onSavePosts }) => {
-    // const [data, setData] = useState([])
     const fetchPosts = () => {
     axios
         .get('https://www.reddit.com/r/mac/top.json?limit=50')
         .then(res => {
             debugger
             onSavePosts(res.data.data.children)
-            // const data = res.data.data.children
-            // setData(data)
         })
         .catch(e => {
             console.log('error:', e)
