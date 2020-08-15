@@ -1,0 +1,20 @@
+.Item {
+    -webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+    padding: 20px 5px;
+    margin: 10px;
+  }
+  
+  .ItemImage {
+    width: 30vw;
+  }
+
+  .Dot {
+    height: 12px;
+    width: 12px;
+    background-color: blue;
+    border-radius: 50%;
+    display: flex;
+  }
+

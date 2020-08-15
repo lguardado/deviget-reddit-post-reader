@@ -1,11 +1,11 @@
 import React from 'react';
-import Styles from './Layout.module.css'
+import styles from './Layout.module.css'
 
 const layout = (props) => {
 
         return (
             <React.Fragment>
-                <main className={Styles.Content}>
+                <main className={styles.Content}>
                     {props.children}
                 </main>
             </React.Fragment>
