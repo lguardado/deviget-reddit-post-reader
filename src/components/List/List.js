@@ -3,7 +3,7 @@ import React from 'react'
 import Item from '../Item/Item'
 import styles from './List.module.css'
 
-const list = ({ items }) => {
+const list = ({ items, canLoadMore, onLoadMore }) => {
 
     const renderItems = () => items.map(item =>
         <Item
@@ -11,9 +11,13 @@ const list = ({ items }) => {
             item={item.data} />
     )
     return (
-        <div className={styles.List}>
-            {renderItems()}
-        </div>)
+        <div>
+            <div className={styles.List}>
+                {renderItems()}
+            </div>
+            {canLoadMore && <button onClick={onLoadMore}>load more</button>}
+        </div>
+    )
 }
 
 

@@ -26,3 +26,6 @@ Layout (hoc to wrap the components in the app component)
             Post
     Details (container)
         PostDetail
+
+
+note: Sent email to Daiana to ask about "Saving pictures in the picture gallery" since it looks like a mobile native feature
