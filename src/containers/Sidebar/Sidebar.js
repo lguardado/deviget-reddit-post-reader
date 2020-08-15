@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 
 import axios from 'axios'
 import List from '../../components/List/List'
-import { savePosts } from '../../store/actions'
+import { savePosts, itemClicked } from '../../store/actions'
 
-const Sidebar = ({ posts, onSavePosts }) => {
+const Sidebar = ({ posts, onSavePosts, onItemClicked }) => {
     const POSTS_LIMIT = 10
     const PAGES_LIMIT = 5
 
@@ -43,7 +43,8 @@ const Sidebar = ({ posts, onSavePosts }) => {
             items={posts}
             canLoadMore={hasMore}
             onLoadMore={fetchPosts}
-            loading={loading} />
+            loading={loading}
+            handleItemClicked={(item) => onItemClicked(item)} />
     )
 }
 
@@ -56,7 +57,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSavePosts: (posts) => dispatch(savePosts(posts))
+        onSavePosts: (posts) => dispatch(savePosts(posts)),
+        onItemClicked: (item) => dispatch(itemClicked(item)),
     }
 }
 

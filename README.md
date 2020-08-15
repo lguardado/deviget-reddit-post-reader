@@ -29,3 +29,9 @@ Layout (hoc to wrap the components in the app component)
 
 
 note: Sent email to Daiana to ask about "Saving pictures in the picture gallery" since it looks like a mobile native feature
+
+- getting the list of items using axios
+- setting the list to redux
+- handling item click to mark as read
+- adding load more button to get more screens
+- disabling button when there are no more results or is loading (to avoid several requests)
