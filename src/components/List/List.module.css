@@ -1,3 +1,8 @@
+.ListWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .List {
     width: 40vw;
     height: 100vh;

@@ -20,11 +20,11 @@ const list = ({
         />
     )
     return (
-        <div>
+        <div className={styles.ListWrapper}>
             <div className={styles.List}>
                 {renderItems()}
             </div>
-            {loading && <div class={styles.Loader}>Loading...</div>}
+            {loading && <div className={styles.Loader}>Loading...</div>}
             <Button
                 onClick={onLoadMore}
                 btnType={'Default'}

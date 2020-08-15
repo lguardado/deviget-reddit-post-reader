@@ -37,7 +37,9 @@ const Sidebar = ({ posts, onSavePosts, onItemClicked }) => {
 
     useEffect(() => {
         fetchPosts()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
     return (
         <List
             items={posts}

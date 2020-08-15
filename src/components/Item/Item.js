@@ -13,9 +13,10 @@ const sidebarItem = ({ item, itemClicked }) => {
         <div onClick={() => itemClicked(item.id)} className={styles.Item}>
             <span className={dotStyles.join(' ')}></span>
             <p>{item.title}</p>
-            {item.thumbnail &&
+            {item.thumbnail && item.thumbnail !== 'self' &&
                 <img className={styles.ItemImage} src={item.thumbnail} alt='thumbnail' />}
-        {item.num_comments} comments
+                <br />
+            {item.num_comments} comments
         </div>)
 }
 

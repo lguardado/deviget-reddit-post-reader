@@ -1,9 +1,29 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const Details = () => {
+import ItemDetails from '../../components/ItemDetails/ItemDetails'
+import styles from './Details.module.css'
+
+const Details = ({ selectedItem }) => {
+    if (selectedItem) {
+        return (
+            <div className={styles.DetailsContainer}>
+                <ItemDetails item={selectedItem.data} />
+            </div>
+        )
+    }
     return (
-        <div>DETAILS</div>
+        <div className={styles.DetailsContainer}>
+            Select an item to see its details
+        </div>
     )
 }
 
-export default Details
+const mapStateToProps = state => {
+    return {
+        selectedItem: state.selectedItem
+    }
+}
+
+
+export default connect(mapStateToProps)(Details)
