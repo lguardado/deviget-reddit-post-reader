@@ -11,4 +11,4 @@ const thumb = ({ source, classes }) => {
     )
 }
 
-export default thumb
+export default React.memo(thumb)

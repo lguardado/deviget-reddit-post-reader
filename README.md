@@ -38,3 +38,8 @@ note: Sent email to Daiana to ask about "Saving pictures in the picture gallery"
 - added details view to show pots's details
 - created simple thumb component to reuse in list and details
 - done for the day :)
+
+todos:
+- Add clear item button
+- Add clear all button
+- Add animation
