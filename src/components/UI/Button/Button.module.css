@@ -10,6 +10,13 @@
     font-weight: bold;
 }
 
+@media (max-width: 425px) {
+    .Button {
+        font-size: 15px;
+        padding: 7px;
+    }
+}
+
 .Button:disabled {
     color: #ccc;
     cursor: not-allowed;

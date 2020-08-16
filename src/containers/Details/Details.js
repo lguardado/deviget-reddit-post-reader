@@ -13,9 +13,9 @@ const Details = ({ selectedItem }) => {
         )
     }
     return (
-        <div className={styles.DetailsContainer}>
+        <h3 className={styles.DetailsContainer}>
             Select an item to see its details
-        </div>
+        </h3>
     )
 }
 

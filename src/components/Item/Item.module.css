@@ -11,6 +11,12 @@
     width: 30vw;
   }
 
+  @media (max-width: 425px) {
+      .ItemImage {
+      width: 25vw;
+    }
+  }
+
   .Dot {
     height: 12px;
     width: 12px;

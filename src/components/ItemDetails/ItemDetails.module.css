@@ -1,4 +1,7 @@
-.List {
+.DetailsList {
     list-style: none;
     padding: 0;
+}
+.DetailsThumbnail {
+    width: 50vw;
 }

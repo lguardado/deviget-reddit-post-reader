@@ -7,8 +7,8 @@ const itemDetails = ({ item }) => {
     return (
         <React.Fragment>
             <h3>{item.title}</h3>
-            <Thumb source={item.thumbnail}/>
-            <ul className={styles.List}>
+            <Thumb source={item.thumbnail} classes={[styles.DetailsThumbnail]}/>
+            <ul className={styles.DetailsList}>
                 <li> Comments: {item.num_comments} </li>
                 <li> Created: {item.created}</li>
             </ul>
