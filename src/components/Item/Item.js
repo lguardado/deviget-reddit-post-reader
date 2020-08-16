@@ -15,15 +15,16 @@ const sidebarItem = ({ item, itemClicked, itemDismissed }) => {
         <div className={styles.Item}>
             <div onClick={() => itemClicked(item.id)} >
                 <span className={dotStyles.join(' ')}></span>
-                <p>{item.title}</p>
+                <div className={styles.ItemAuthor}>{item.author}</div>
+                <br />
                 <div className={styles.ImageChevron}>
                     <Thumb classes={[styles.ItemImage]} source={item.thumbnail} />
                     <div className={styles.ChevronRight}></div>
-
                 </div>
+                <p className={styles.ItemTitle}> {item.title}</p>
 
                 <br />
-                {item.num_comments} comments
+                <p>{item.num_comments} comments</p>
             </div>
             <Button onClick={() => itemDismissed(item.id)}>Dismiss</Button>
         </div>

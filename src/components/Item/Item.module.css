@@ -6,6 +6,10 @@
     margin: 10px;
     text-align: center;
   }
+  
+  .ItemAuthor {
+    font-weight: bold;
+  }
 
   .ItemImage {
     width: 30vw;
@@ -14,6 +18,10 @@
   @media (max-width: 425px) {
       .ItemImage {
       width: 25vw;
+    }
+
+    p {
+      font-size: 12px;
     }
   }
 
