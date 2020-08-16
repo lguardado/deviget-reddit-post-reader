@@ -35,3 +35,6 @@ note: Sent email to Daiana to ask about "Saving pictures in the picture gallery"
 - handling item click to mark as read
 - adding load more button to get more screens
 - disabling button when there are no more results or is loading (to avoid several requests)
+- added details view to show pots's details
+- created simple thumb component to reuse in list and details
+- done for the day :)

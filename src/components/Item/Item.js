@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styles from './Item.module.css'
+import Thumb from '../Thumb/Thumb'
 
 const sidebarItem = ({ item, itemClicked }) => {
 
@@ -13,8 +14,7 @@ const sidebarItem = ({ item, itemClicked }) => {
         <div onClick={() => itemClicked(item.id)} className={styles.Item}>
             <span className={dotStyles.join(' ')}></span>
             <p>{item.title}</p>
-            {item.thumbnail && item.thumbnail !== 'self' &&
-                <img className={styles.ItemImage} src={item.thumbnail} alt='thumbnail' />}
+            <Thumb classes={[styles.ItemImage]} source={item.thumbnail}/>
                 <br />
             {item.num_comments} comments
         </div>)
