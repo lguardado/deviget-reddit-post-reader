@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './ItemDetails.module.css'
 import Thumb from '../Thumb/Thumb'
-import { ParseToTimeDistance } from '../Utils/DateUtils'
+import { ParseToTimeDistance } from '../../Utils/DateUtils'
 
 const itemDetails = ({ item }) => {
     return (
