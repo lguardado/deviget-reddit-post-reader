@@ -44,6 +44,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 posts: [],
+                selectedItem: null
             }
         default:
             return state
