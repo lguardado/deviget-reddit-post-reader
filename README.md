@@ -39,8 +39,11 @@ note: Sent email to Daiana to ask about "Saving pictures in the picture gallery"
 - created simple thumb component to reuse in list and details
 - done for the day :)
 
-todos:
-- Format date
+
 - Add clear item button
 - Add clear all button
+- Format date
+
+
+todos:
 - Add animation
