@@ -8,8 +8,10 @@ const list = ({
     items,
     canLoadMore,
     onLoadMore,
+    onDismissAll,
     loading,
-    handleItemClicked
+    handleItemClicked,
+    handleItemDismissed
 }) => {
 
     const renderItems = () => items.map(item =>
@@ -17,6 +19,7 @@ const list = ({
             key={item.data.id}
             item={item.data}
             itemClicked={handleItemClicked}
+            itemDismissed={handleItemDismissed}
         />
     )
     return (
@@ -25,6 +28,9 @@ const list = ({
                 {renderItems()}
             </div>
             {loading && <div className={styles.Loader}>Loading...</div>}
+            <Button
+                onClick={onDismissAll}
+                disabled={loading || !items.length}>Dismiss all</Button>
             <Button
                 onClick={onLoadMore}
                 disabled={!canLoadMore || loading}>load more</Button>

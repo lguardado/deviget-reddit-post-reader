@@ -27,6 +27,24 @@ const reducer = (state = initialState, action) => {
                 posts: updatedPosts,
                 selectedItem: selectedItem,
             }
+        case actionTypes.ITEM_DISMISSED:
+            // If the dismissed item is in the details view, reset the details (selected item)
+            if (state.selectedItem && state.selectedItem.data.id === action.payload.item_id) {
+                return {
+                    ...state,
+                    posts: [...state.posts].filter(item => item.data.id !== action.payload.item_id),
+                    selectedItem: null
+                }
+            }
+            return {
+                ...state,
+                posts: [...state.posts].filter(item => item.data.id !== action.payload.item_id),
+            }
+        case actionTypes.CLEAR_POSTS:
+            return {
+                ...state,
+                posts: [],
+            }
         default:
             return state
     }

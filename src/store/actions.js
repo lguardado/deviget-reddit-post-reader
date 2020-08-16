@@ -13,3 +13,17 @@ export const itemClicked = ( item ) => {
         payload: {item_id: item}
     }
 }
+
+export const itemDismissed = ( item ) => {
+    return {
+        type: actionTypes.ITEM_DISMISSED,
+        payload: {item_id: item}
+    }
+}
+
+
+export const clearPosts = () => {
+    return {
+        type: actionTypes.CLEAR_POSTS
+    }
+}
