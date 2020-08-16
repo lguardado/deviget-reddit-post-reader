@@ -21,8 +21,7 @@ const sidebarItem = ({ item, itemClicked, itemDismissed }) => {
                     <Thumb classes={[styles.ItemImage]} source={item.thumbnail} />
                     <div className={styles.ChevronRight}></div>
                 </div>
-                <p className={styles.ItemTitle}> {item.title}</p>
-
+                <p> {item.title}</p>
                 <br />
                 <p>{item.num_comments} comments</p>
             </div>
