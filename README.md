@@ -40,6 +40,7 @@ note: Sent email to Daiana to ask about "Saving pictures in the picture gallery"
 - done for the day :)
 
 todos:
+- Format date
 - Add clear item button
 - Add clear all button
 - Add animation

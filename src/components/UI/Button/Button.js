@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Button.module.css';
 
-const button = ({ children, disabled, onClick, btnType}) => (
+const button = ({ children, disabled, onClick, btnType = 'Default'}) => (
     <button
         disabled={disabled}
         className={[styles.Button, styles[btnType]].join(' ')}

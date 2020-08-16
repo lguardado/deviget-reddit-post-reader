@@ -27,7 +27,6 @@ const list = ({
             {loading && <div className={styles.Loader}>Loading...</div>}
             <Button
                 onClick={onLoadMore}
-                btnType={'Default'}
                 disabled={!canLoadMore || loading}>load more</Button>
         </div>
     )

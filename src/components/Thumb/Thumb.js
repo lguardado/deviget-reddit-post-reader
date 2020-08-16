@@ -7,7 +7,7 @@ const thumb = ({ source, classes }) => {
     
     return (source && source !== 'self' ?
     <img className={classes} src={source} alt='thumbnail' />:
-    <div>No Image</div>
+    <div className={classes} >No Image</div>
     )
 }
 
