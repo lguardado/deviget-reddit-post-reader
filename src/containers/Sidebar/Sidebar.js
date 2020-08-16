@@ -20,9 +20,11 @@ const Sidebar = ({
     const [hasMore, setHasMore] = useState(true)
     const [currentPage, setCurrentPage] = useState(1)
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState({ errorStatus: false, errorMessage: '' })
 
     const fetchPosts = () => {
         setLoading(true)
+        setError({ errorStatus: false })
         axios
             .get(
                 `https://www.reddit.com/r/mac/top.json?limit=${POSTS_LIMIT}&after=${lastItem}`
@@ -36,8 +38,8 @@ const Sidebar = ({
                 setLoading(false)
             })
             .catch(e => {
-                console.log('error:', e)
                 setLoading(false)
+                setError({ errorStatus: true, errorMessage: e.message })
             })
     }
 
@@ -46,7 +48,7 @@ const Sidebar = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return (
+    let renderList = () => (
         <List
             items={posts}
             canLoadMore={hasMore}
@@ -57,6 +59,16 @@ const Sidebar = ({
             handleItemClicked={(item) => onItemClicked(item)}
             handleItemDismissed={(item) => onItemDismissed(item)}
         />
+    )
+
+    if (error.errorStatus === true) {
+        renderList = () => (<h3>Error retreiving items: {error.errorMessage}</h3>)
+    }
+
+    return (
+        <React.Fragment>
+            {renderList()}
+        </React.Fragment>
     )
 }
 

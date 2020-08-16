@@ -4,9 +4,16 @@
 }
 
 .List {
-    width: 40vw;
     height: 100vh;
+    width: 30vw;
     overflow: scroll;
+}
+
+@media (max-width: 768px) {
+  .List {
+    width: 40vw;
+
+  }
 }
 
 .Loader,
