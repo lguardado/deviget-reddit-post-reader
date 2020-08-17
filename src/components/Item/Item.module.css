@@ -10,11 +10,19 @@
   
   .ItemAuthor {
     font-weight: bold;
+    word-break: break-word;
   }
 
   .ItemImage {
     width: 30vw;
   }
+
+  .ImageChevron {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+}
 
   @media (max-width: 425px) {
       .ItemImage {
@@ -23,6 +31,10 @@
 
     p {
       font-size: 12px;
+    }
+
+    .ImageChevron {
+      padding: 0
     }
   }
 
@@ -52,9 +64,3 @@
 	width: 0.45em;
   }
 
-  .ImageChevron {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 8px;
-  }

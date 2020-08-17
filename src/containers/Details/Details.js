@@ -8,14 +8,18 @@ const Details = ({ selectedItem }) => {
     if (selectedItem) {
         return (
             <div className={styles.DetailsContainer}>
+                <h1>Details</h1>
                 <ItemDetails item={selectedItem.data} />
             </div>
         )
     }
     return (
-        <h3 className={styles.DetailsContainer}>
-            Select an item to see its details
-        </h3>
+        <div className={styles.DetailsContainer}>
+            <h3>Details</h3>
+            <h4>
+                Select an item to see its details
+            </h4>
+        </div>
     )
 }
 
