@@ -3,12 +3,19 @@ import { connect } from 'react-redux'
 
 import axios from 'axios'
 import List from '../../components/List/List'
-import { savePosts, itemClicked, itemDismissed, clearPosts } from '../../store/actions'
+import {
+    savePosts,
+    itemClicked,
+    itemDismissed,
+    itemSelected,
+    clearPosts
+} from '../../store/actions'
 
 const Sidebar = ({
     posts,
     onSavePosts,
     onItemClicked,
+    onItemSelected,
     onItemDismissed,
     onDismissAll }) => {
 
@@ -21,6 +28,7 @@ const Sidebar = ({
     const [currentPage, setCurrentPage] = useState(1)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState({ errorStatus: false, errorMessage: '' })
+    const [lastItemId, setLastItemId] = useState(null)
 
     const fetchPosts = () => {
         setLoading(true)
@@ -50,6 +58,16 @@ const Sidebar = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const handleItemClicked = (item) => {
+        if (!item.clicked) {
+            onItemClicked(item.id)
+        }
+        if (item.id !== lastItemId) {
+            onItemSelected(item)
+            setLastItemId(item.id)
+        }
+    }
+
     let renderList = () => (
         <List
             items={posts}
@@ -58,7 +76,7 @@ const Sidebar = ({
             onItemDismissed={onItemDismissed}
             onDismissAll={onDismissAll}
             loading={loading}
-            handleItemClicked={(item) => onItemClicked(item)}
+            handleItemClicked={(item) => handleItemClicked(item)}
             handleItemDismissed={(item) => onItemDismissed(item)}
         />
     )
@@ -67,24 +85,22 @@ const Sidebar = ({
         renderList = () => (<h3>Error retreiving items: {error.errorMessage}</h3>)
     }
 
-    return (
-        <React.Fragment>
-            {renderList()}
-        </React.Fragment>
-    )
+    return renderList()
 }
 
 
 const mapStateToProps = state => {
     return {
-        posts: state.posts
+        posts: state.posts,
+        selectedItem: state.selectedItem
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onSavePosts: (posts) => dispatch(savePosts(posts)),
-        onItemClicked: (item) => dispatch(itemClicked(item)),
+        onItemClicked: (item) => { dispatch(itemClicked(item)) },
+        onItemSelected: (item) => { dispatch(itemSelected(item)) },
         onItemDismissed: (item) => dispatch(itemDismissed(item)),
         onDismissAll: (item) => dispatch(clearPosts(item)),
     }

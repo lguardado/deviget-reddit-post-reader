@@ -1,20 +1,27 @@
 import * as actionTypes from './actionTypes';
 
-export const savePosts = ( posts ) => {
+export const savePosts = (posts) => {
     return {
         type: actionTypes.SAVE_POSTS,
-        payload: {posts: posts}
+        payload: { posts: posts }
     }
 }
 
-export const itemClicked = ( item ) => {
+export const itemClicked = (item_id) => {
     return {
         type: actionTypes.ITEM_CLICKED,
-        payload: {item_id: item}
+        payload: { item_id }
     }
 }
 
-export const itemDismissed = ( item ) => {
+export const itemSelected = (item) => {
+    return {
+        type: actionTypes.ITEM_SELECTED,
+        payload: { item }
+    }
+}
+
+export const itemDismissed = (item) => {
     return {
         type: actionTypes.ITEM_DISMISSED,
         payload: {item_id: item}

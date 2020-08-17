@@ -13,7 +13,7 @@ const Item = ({ item, itemClicked, itemDismissed }) => {
 
     return (
         <div className={styles.Item}>
-            <div onClick={() => itemClicked(item.id)} >
+            <div onClick={() => itemClicked(item)} >
                 <span className={dotStyles.join(' ')}></span>
                 <div className={styles.ItemAuthor}>{item.author}</div>
                 <br />

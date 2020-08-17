@@ -9,7 +9,7 @@ const Details = ({ selectedItem }) => {
         return (
             <div className={styles.DetailsContainer}>
                 <h1>Details</h1>
-                <ItemDetails item={selectedItem.data} />
+                <ItemDetails item={selectedItem} />
             </div>
         )
     }
