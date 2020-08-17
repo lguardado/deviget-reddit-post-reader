@@ -4,7 +4,7 @@ import styles from './Item.module.css'
 import Thumb from '../Thumb/Thumb'
 import Button from '../UI/Button/Button'
 
-const sidebarItem = ({ item, itemClicked, itemDismissed }) => {
+const Item = ({ item, itemClicked, itemDismissed }) => {
 
     let dotStyles = [styles.Dot]
     if (item.clicked) {
@@ -30,4 +30,4 @@ const sidebarItem = ({ item, itemClicked, itemDismissed }) => {
     )
 }
 
-export default React.memo(sidebarItem)
+export default React.memo(Item)

@@ -25,6 +25,8 @@ const Sidebar = ({
     const fetchPosts = () => {
         setLoading(true)
         setError({ errorStatus: false })
+        // This shuold be implemented using react thunk but for this particular case it's
+        // an overkill
         axios
             .get(
                 `https://www.reddit.com/r/mac/top.json?limit=${POSTS_LIMIT}&after=${lastItem}`

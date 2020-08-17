@@ -43,7 +43,18 @@ note: Sent email to Daiana to ask about "Saving pictures in the picture gallery"
 - Add clear item button
 - Add clear all button
 - Format date
+- Add animation
 
+Notes: For the animation I installed react-transition-group which is recommended [here](https://es.reactjs.org/docs/animation.html), since you can't animate
+an item if it's removed from the DOM.
+I realized it's re-rendering all items when one of them is dismissed though even when I'm setting the key property, which
+affects performance.
+Also I had to remove strictMode to prevent a warning (`findDOMNode is deprecated in StrictMode`). 
+The solution they provide is not working [using a ref](https://github.com/reactjs/react-transition-group/blob/1fd4a65ac45edd2aea3dec18eeb8b9c07c7eb93f/CHANGELOG.md#features)
+
+About the re-rendering they say That's really just how React components with children work(check this [link](https://github.com/reactjs/react-transition-group/issues/235)), but I think it should be a way to avoid it, since the items are not changing.
+Aparently React memo doesn't make any difference when using transitions
 
 todos:
-- Add animation
+- deploy the app.
+- if I don't get more info about the "Saving pictures in the picture gallery", I'll asume it was for mobile native language.

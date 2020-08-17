@@ -1,10 +1,12 @@
 import React from 'react'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import Item from '../Item/Item'
 import styles from './List.module.css'
+import './List.css'
 import Button from '../UI/Button/Button'
 
-const list = ({
+const List = ({
     items,
     canLoadMore,
     onLoadMore,
@@ -14,18 +16,28 @@ const list = ({
     handleItemDismissed
 }) => {
 
-    const renderItems = () => items.map(item =>
-        <Item
-            key={item.data.id}
-            item={item.data}
-            itemClicked={handleItemClicked}
-            itemDismissed={handleItemDismissed}
-        />
-    )
+    const renderItems = () => items.map(item => {
+        return (
+            <CSSTransition
+                key={item.data.id}
+                timeout={500}
+                classNames='item'
+            >
+                <Item
+                    item={item.data}
+                    itemClicked={handleItemClicked}
+                    itemDismissed={handleItemDismissed}
+                />
+            </CSSTransition>
+        )
+    })
+
     return (
         <div className={styles.ListWrapper}>
             <div className={styles.List}>
-                {renderItems()}
+                <TransitionGroup className='post' >
+                    {renderItems()}
+                </TransitionGroup>
             </div>
             {loading && <div className={styles.Loader}>Loading...</div>}
             <Button
@@ -39,4 +51,4 @@ const list = ({
 }
 
 
-export default list
+export default List

@@ -4,7 +4,7 @@ import styles from './ItemDetails.module.css'
 import Thumb from '../Thumb/Thumb'
 import { ParseToTimeDistance } from '../../Utils/DateUtils'
 
-const itemDetails = ({ item }) => {
+const ItemDetails = ({ item }) => {
     return (
         <React.Fragment>
             <h3>{item.title}</h3>
@@ -17,4 +17,4 @@ const itemDetails = ({ item }) => {
     )
 }
 
-export default itemDetails
+export default ItemDetails

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const thumb = ({ source, classes }) => {
+const Thumb = ({ source, classes }) => {
     if (classes && classes.length) {
         classes.join(' ')
     }
@@ -11,4 +11,4 @@ const thumb = ({ source, classes }) => {
     )
 }
 
-export default React.memo(thumb)
+export default React.memo(Thumb)
