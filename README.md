@@ -44,6 +44,8 @@ note: Sent email to Daiana to ask about "Saving pictures in the picture gallery"
 - Add clear all button
 - Format date
 - Add animation
+- deploy the app.
+
 
 Notes: For the animation I installed react-transition-group which is recommended [here](https://es.reactjs.org/docs/animation.html), since you can't animate
 an item if it's removed from the DOM.
@@ -56,5 +58,7 @@ About the re-rendering they say That's really just how React components with chi
 Aparently React memo doesn't make any difference when using transitions
 
 todos:
-- deploy the app.
 - if I don't get more info about the "Saving pictures in the picture gallery", I'll asume it was for mobile native language.
+
+
+App deployed to: https://deviget-reddit-posts-reader.web.app/

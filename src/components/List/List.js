@@ -34,6 +34,7 @@ const List = ({
 
     return (
         <div className={styles.ListWrapper}>
+            <h3 className={styles.ListTitle}>Reddit posts</h3>
             <div className={styles.List}>
                 <TransitionGroup className='post' >
                     {renderItems()}
