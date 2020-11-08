@@ -9,4 +9,4 @@ const Button = ({ children, disabled, onClick, btnType = 'Default'}) => (
         onClick={onClick}>{children}</button>
 );
 
-export default React.memo(Button)
+export default Button
