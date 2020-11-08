@@ -5,7 +5,7 @@ import styles from './Button.module.css';
 const Button = ({ children, disabled, onClick, btnType = 'Default'}) => (
     <button
         disabled={disabled}
-        className={[styles.Button, styles[btnType]].join(' ')}
+        className={`${styles.Button} ${styles[btnType]}`}
         onClick={onClick}>{children}</button>
 );
 

@@ -6,15 +6,10 @@ import Button from '../UI/Button/Button'
 
 const Item = ({ item, itemClicked, itemDismissed }) => {
 
-    let dotStyles = [styles.Dot]
-    if (item.clicked) {
-        dotStyles.push(styles.DotDisabled)
-    }
-
     return (
         <div className={styles.Item}>
             <div onClick={() => itemClicked(item)} >
-                <span className={dotStyles.join(' ')}></span>
+                <span className={`${styles.Dot} ${item.clicked && styles.DotDisabled}`}></span>
                 <div className={styles.ItemAuthor}>{item.author}</div>
                 <br />
                 <div className={styles.ImageChevron}>
