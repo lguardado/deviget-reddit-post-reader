@@ -7,7 +7,7 @@ import './List.css'
 import Button from '../UI/Button/Button'
 
 const List = ({
-    items,
+    items = [],
     canLoadMore,
     onLoadMore,
     onDismissAll,
@@ -19,6 +19,7 @@ const List = ({
     const renderItems = () => items.map(item => {
         return (
             <CSSTransition
+                data-testid='css-transition'
                 key={item.data.id}
                 timeout={500}
                 classNames='item'
@@ -37,7 +38,7 @@ const List = ({
             <h3>Reddit posts</h3>
             <div className={styles.List}>
                 <TransitionGroup className='post' >
-                    {renderItems()}
+                    {items.length && renderItems()}
                 </TransitionGroup>
             </div>
             {loading && <div className={styles.Loader}>Loading...</div>}

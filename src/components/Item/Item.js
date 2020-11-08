@@ -7,7 +7,7 @@ import Button from '../UI/Button/Button'
 const Item = ({ item, itemClicked, itemDismissed }) => {
 
     return (
-        <div className={styles.Item}>
+        <div className={styles.Item} data-testid="item">
             <div onClick={() => itemClicked(item)} >
                 <span className={`${styles.Dot} ${item.clicked && styles.DotDisabled}`}></span>
                 <div className={styles.ItemAuthor}>{item.author}</div>
